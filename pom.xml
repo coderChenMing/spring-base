@@ -31,7 +31,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.2.2.RELEASE</version>
+            <version>5.2.13.RELEASE</version>
         </dependency>
         <!--cglib代理类时使用-->
         <dependency>
@@ -43,12 +43,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
-            <version>5.1.2.RELEASE</version>
+            <version>5.2.2.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.46</version>
+            <version>5.1.47</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--set方法注入基本类型和引用类型示例-->
+    <bean id="date" class="java.time.LocalDate">
+        <constructor-arg index="0" value="2022"/>
+        <constructor-arg index="1" value="1"/>
+        <constructor-arg index="2" value="1"/>
+    </bean>
+    <bean id="localTime" class="java.time.LocalTime">
+        <constructor-arg index="0" value="16"/>
+        <constructor-arg index="1" value="30"/>
+        <constructor-arg index="2" value="59"/>
+        <constructor-arg index="3" value="89"/>
+    </bean>
+
+    <bean id="localDateTime" class="java.time.LocalDateTime">
+        <constructor-arg index="0" ref="date"/>
+        <constructor-arg index="1" ref="localTime"/>
+    </bean>
+
+    <bean id="employee" class="com.learn.bean.Employee"  init-method="init" destroy-method="destroy">
+        <property name="age" value="36"/>
+        <property name="name" value="张三"/>
+        <property name="entryTime" ref="localDateTime"/>
+        <property name="note" >
+            <props>
+                <prop key="周一">睡觉</prop>
+                <prop key="周二">上班</prop>
+            </props>
+        </property>
+        <property name="record">
+            <map>
+                <entry>
+                    <key><bean class="java.time.Instant">
+                        <constructor-arg index="0" value="500"/>
+                        <constructor-arg index="1" value="800"/></bean></key>
+                    <value>1000</value>
+                </entry>
+            </map>
+        </property>
+        <property name="workContent" value="睡觉,看书"/>
+        <property name="works">
+            <list>
+                <bean class="com.learn.bean.Work">
+                    <property name="content" value="sleep"/>
+                    <property name="count" value="20"/>
+                </bean>
+                <bean class="com.learn.bean.Work">
+                    <property name="content" value="eat"/>
+                    <property name="count" value="10"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+</beans>

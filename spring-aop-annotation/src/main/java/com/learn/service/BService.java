@@ -24,6 +24,6 @@ public interface BService {
 
     void anno2();
 
-    void annoTest(String str,Object obj);
+    String annoTest(String str,Object obj);
 
 }

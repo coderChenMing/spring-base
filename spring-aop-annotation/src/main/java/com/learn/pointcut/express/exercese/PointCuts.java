@@ -138,6 +138,7 @@ public class PointCuts {
         logStart();
         proceedingJoinPointUse(proceedingJoinPoint);
         Object obj = proceedingJoinPoint.proceed();
+        System.out.println("执行被代理方法返回值:"+obj);
         logEnd();
         return obj;
     }
@@ -176,6 +177,10 @@ public class PointCuts {
         System.out.println("----------------------------------------------------------------------------------------");
         Method method2 = null;
         Class[] parameterTypes = ((MethodSignature) pjp.getSignature()).getParameterTypes();
+        String[] parameterNames= ((MethodSignature) pjp.getSignature()).getParameterNames();
+
+        System.out.println(Arrays.toString(parameterTypes));
+        System.out.println(Arrays.toString(parameterNames));
         try {
             // 方法名,方法参数
             method2 = pjp.getTarget().getClass().getMethod(pjp.getSignature().getName(), parameterTypes);
@@ -195,7 +200,7 @@ public class PointCuts {
             }
         }
         Object[] args = pjp.getArgs();
-        // 打印被代理方法上参数列表
+        // 打印被代理方法上参数列表实际参数值
         Arrays.stream(args).forEach(System.out::println);
     }
 

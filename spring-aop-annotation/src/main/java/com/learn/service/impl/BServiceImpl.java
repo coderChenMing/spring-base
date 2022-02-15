@@ -47,7 +47,8 @@ public class BServiceImpl implements BService {
     }
 
     @MyAnno("annoTest")
-    public void annoTest(String str,Object obj) {
+    public String annoTest(String str,Object obj) {
         System.out.println("annoTest MyAnno ........");
+        return str;
     }
 }

@@ -41,8 +41,13 @@ public class BServiceImpl implements BService {
         System.out.println("BOOK .............");
     }
 
-    @MyAnno("method")
+    @MyAnno("anno2")
     public void anno2() {
-        System.out.println("Method Annotation ........");
+        System.out.println("anno2 MyAnno ........");
+    }
+
+    @MyAnno("annoTest")
+    public void annoTest(String str,Object obj) {
+        System.out.println("annoTest MyAnno ........");
     }
 }

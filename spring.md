@@ -185,7 +185,7 @@ args用来匹配方法参数的。
      public void pointCut() {
      }
 
-## @arg:
+## @args:
 @args匹配被调用的方法上含有参数,且对应的参数类型上拥有指定的注解的情况。
 
 如BServiceImpl.anno(Book book ) Book类使用@MyAnno修饰

@@ -1,5 +1,6 @@
 package com.learn.pointcut.express.exercese;
 
+import com.learn.anno.Book;
 import com.learn.service.AService;
 import com.learn.service.BService;
 import org.springframework.context.ApplicationContext;
@@ -28,11 +29,12 @@ public class Test {
     }
     public static void testWithIn2(ApplicationContext ap) {
         BService bService = (BService) ap.getBean("BServiceImpl");
-        bService.let();
-        bService.go();
-        bService.make("我爱北京天安门 ..........");
+        // bService.let();
+        // bService.go();
+        // bService.make("我爱北京天安门 ..........");
         // bService.anno(new Book());
          bService.anno2();
+         bService.annoTest("张三",new Book());
     }
 
 

@@ -57,4 +57,7 @@
         <aop:pointcut id="pointCut1" expression="execution(public * com.learn.service.impl.UserServiceImpl.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pointCut1"/>
     </aop:config>
+
+    <!--使用注解方式添加事务:@Transactional-->
+    <tx:annotation-driven/>
 </beans>
